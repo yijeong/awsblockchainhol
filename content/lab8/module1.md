@@ -1,147 +1,84 @@
 ---
-title: RESTful API서버 구성
+title: Blockchain network에 member추가하기 
 weight: 1
-pre: "<b>4.1 </b>"
+pre: "<b>7.1 </b>"
 ---
 
-1. Fabric Client에 접속해 있는 터미널에서 Node.js를 설치합니다. 
+1. AWS Management Console에서 Amazon Managed Blockchain 서비스로 이동합니다.
 
-```
-cd ~
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
-. ~/.nvm/nvm.sh 
-nvm install lts/carbon
-sudo yum install gcc-c++ -y
-```
+2. Networks에서 **“beer”** 를 클릭합니다.
 
-2. package.json에 명시되어있는 의존 패키지들을 설치합니다. 
-```
-cd ~/blockchain-supplychain/beer-supplychain-rest-api/ 
-npm install
-```
+3. 상위 tab에서 Proposals 를 선택합니다. 
 
-{{% notice info %}}
-npm install 명령어를 사용하면 package.json에 명시된 모든 의존 패키지를 한번에 설치할 수 있습니다.
-{{% /notice %}}
+4. Create proposals에서 Propose invitation을 선택합니다. 
 
-3. REST API를Fabric 네트워크에 연결하기 위한 connection profile을 생성합니다. connection profile에는 Fabric네트워크에 대한 설명이 포함됩니다.
-```
-cd ~/blockchain-supplychain/beer-supplychain-rest-api/connection-profile/
-./gen-connection-profile.sh
-```
+![member](/lab8/images/memeber_1.png)
 
-4. 마지막 명령어 수행 결과로 다음과 같이 출력되면 정상입니다. 
+5. Proposal configuration에서 제안 주체로 앞서 생성한 “org1”을 선택합니다. 
 
-```
-/home/ec2-user/blockchain-supplychain/tmp/connection-profile:
-total 8
--rw-rw-r-- 1 ec2-user ec2-user 2302 May 15 06:09 beer-supplychain-connection-profile.yaml
-drwxrwxr-x 2 ec2-user ec2-user 4096 May 15 06:09 org1
+6. 초대할 AWS account 번호를 입력하고 create 를 클릭합니다. 
 
-/home/ec2-user/blockchain-supplychain/tmp/connection-profile/org1:
-total 4
--rw-rw-r-- 1 ec2-user ec2-user 817 May 15 06:09 client-org1.yaml
-```
+![member](/lab8/images/memeber_2.png)
 
-5. 3번 수행 결과로 생성된 connection-profile 을 확인합니다. 
-```
-more ~/blockchain-supplychain/tmp/connection-profile/beer-supplychain-connection-profile.yaml
-```
+7.  Active 에서 방금 생성한 proposals을 확인할 수 있습니다. 
 
-{{% notice info %}}
-모듈 2 에서 만든 Fabric 네트워크와 다른 정보가 있다면 수정 해주어야 합니다. (ex. Network name, CA registrar enrollID, ecrollSecret 등) 
-{{% /notice %}}
+![member](/lab8/images/memeber_3.png)
 
-6. app.js에서 사용하는 구성파일인 config.json 도 확인합니다. 
-```
-cd ~/blockchain-supplychain/beer-supplychain-rest-api
-vi config.json
-```
+8. 해당 proposal을 클릭합니다. 
 
-{{% notice warning %}}
-** config.json의 피어 이름( 'peers :' 아래)이 connection profile의 피어 이름과 동일한 지 확인하십시오. 또한 admin 아이디와 secret이 올바른지 확인하고 연결 프로필에서 업데이트 한 값과 일치하는지 확인합니다. 본 Lab의 가이드를 그대로 따라왔다면 수정할 것이 없습니다. 
-{{% /notice %}}
+9. vote as member 로 **“org1”**를 선택하고, Yes 를 클릭합니다. 
 
-7. REST API를 실행합니다. 
-```
-nvm use lts/carbon
-node app.js > temp.log & 
-ps -ef | grep app.js
-```
+![member](/lab8/images/memeber_4.png)
 
-8. app.js에는 swagger구성에 대한 설정이 들어있습니다. 따라서 생성된 API 명세서를 swagger로 확인할 수 있습니다. 
+![member](/lab6/images/memeber_5.png)
 
-** Swagger는 간단한 설정으로 프로젝트에서 지정한 URL들을 HTML화면으로 확인할 수 있게 해주는 프로젝트입니다.  
+10.  초대를 받은 AWS Account의 Amazon Managed Blockchain 서비스로 이동합니다. 
 
-- CloudFormation으로 생성한 ELB endpoint 를 확인합니다. 스택의 Outputs에서 ELBDNS를 확인합니다. 
+11. Invitations 에서 앞서 6번에서 생성한 invitation 내역을 확인합니다. 
 
-![client](/lab5/images/rest_1.png)
+![member](/lab8/images/memeber_6.png)
+![member](/lab8/images/memeber_7.png)
 
-- 브라우저 주소창에 <ELBDNS>/api-docs 를 입력합니다. (예: http://amblab-en-blockcha-xxxxxxxxxxx.us-east-1.elb.amazonaws.com/api-docs/)
+- 앞서 PART 1에서 Fabric네트워크를 구성할 때 voting policy를 default값으로 설정한 것을 기억하실 겁니다. Default policy는 다음과 같습니다. 
 
-- Swagger 화면이 나오는 것을 확인합니다. 
+![member](/lab8/images/memeber_8.png)
 
-![client](/lab5/images/rest_2.png)
+- Managed Blockchain 는 분산 네트워크이기 때문에 네트워크를 생성한 AWS 계정이나 다른 AWS 계정이 소유하지 않습니다. 
+- 따라서 네트워크에 참가하는 각 member들은 네트워크를 변경하기 위해 다른 모든 member들에게 투표(vote)를 의뢰합니다. 
+- 예를 들어 다른 AWS 계정을 네트워크에 가입 시키려면 기존 member가 이 계정을 초대할 proposal를 만들어 보내고 다른 member들은 찬성 또는 반대 투표를 합니다. 
+- Proposal이 승인되어 초대장이 해당 AWS 계정으로 전송되면 해당 계정은 초대를 수락하고 네트워크에 가입 할 member을 만듭니다. 
+- 다른 AWS 계정에 있는 member를 삭제하기 위해서도 비슷한 절차가 필요합니다. 
+- 다만 충분한 권한을 가진 AWS 계정의 보안주체는 제안서를 제출하지 않고 언제든지 해당 계정의 회원을 삭제할 수 있습니다. 
 
-- 우리는 CloudFormation 스택을 통해 Fabric Client용 EC2와 그 EC2를 target 으로 갖는 ELB를 생성했습니다. 해당 ELB의 port configuration은 80 (TCP) forwarding to 3000(TCP)입니다. 따라서 80포트로 받은 요청을 실제 node.js application이 listen하는 3000 포트로 포워딩하여 전달해줍니다. 
-자세한 설정은 EC2 콘솔 > Load Balancer > amblab-xxx..으로 시작하는 ELB선택 > Description에서 확인해 볼 수 있습니다.
+9. invitations 에서 해당 network 이름 (**“beer”**) 을 선택하고 Accept invitation을 클릭합니다. 
 
-- Swagger에 명시된 API들과 앞서 배포한 Chaincode의 함수(app.js)의 내용과 일치하는 것을 확인합니다. 
+![member](/lab8/images/memeber_9.png)
 
-9. Swagger를 통해 Fabric 네트워크의 원장을 쿼리하고 업데이트 할 사용자를 생성합니다. Swagger 상단의 User 밑에  **Post /user**를 클릭합니다. 
+10. Create member and join network 에서 Fabric 네트워크에 참여할 멤버를 구성하고 네트워크에 참여합니다. 
 
-- 본 Lab의 모듈 2 에서 Fabric 네트워크를 생성할 때 첫번째 member(Organization)인 **“org1”**과 그에 속한 CA, 그리고 관리자인 **“admin1”**을 만들었습니다. User 신청(register)과 등록(enroll)은 admin의 cert를 이용해서 **“org1”** 의 새 사용자를 등록하는 과정입니다. 여기서 생성될 새로운 **“username”**은 원장을 쿼리하고 업데이트 할 때 사용하는 ID가 됩니다. 
+- Member name: org2
+- Admin username : admin1
+- Admin password : Passwd123
 
-![client](/lab5/images/rest_3.png)
+![member](/lab8/images/memeber_10.png)
 
-10. 우측의  **Try it out** 을 클릭합니다. 
+11. member 생성이 완료 되는 것을 확인합니다. 
 
-11. **Edit Value** 에서 username 과 orgName을 하기와 같이 수정합니다. 
+![member](/lab8/images/memeber_11.png)
 
-```
-{
-  "username": "<your-name>",
-  "orgName": "org1"
-}
-```
-{{% notice warning %}}
-Fabric 네트워크 생성 시 첫번째 member(Organization)을 **“org1”**으로 지정하신 것을 기억하실 겁니다. 따라서 orgName은 **“org1”**로 고정입니다. 혹시 Fabric 네트워크 구성시 다른 이름으로 생성하셨다면 그 이름을 쓰셔야 합니다. 
-{{% /notice %}}
+12. 초대받은 AWS account의 Networks에 **“beer”**가 추가된 것을 확인합니다. 
 
-12. 하기의 **Execute** 를 클릭하여 수행합니다. Response에서 code가 200 이고 Details가 다음과 같으면 정상입니다. 
+![member](/lab8/images/memeber_12.png)
 
-```
-{
-  "success": true,
-  "secret": "",
-  "message": "vanessa enrolled Successfully"
-}
-```
+13. 초대받은 AWS account 와 초대한 AWS account 의 Members를 확인합니다. 
 
-13. Swagger를 통해 트랜젝션이 정상적으로 생성되는지 테스트합니다. Swagger 하단의 Transfer 밑에  **Post /transfer/init** 를 클릭합니다. 
+- 초대한 AWS account의 Members
+![member](/lab8/images/memeber_13.png)
 
-![client](/lab5/images/rest_6.png)
+- 초대받은 AWS account의 Members
+![member](/lab8/images/memeber_14.png)
 
-14. 우측의  **Try it out**  을 클릭합니다. <your-name>은 앞의 8.3에서 생성한 username 입니다.
 
-15. Parameter 에서 **X-username**과 **X-orgName**을 하기와 같이 수정하여 HTTP Header 값을 추가합니다. 
-
-```
-    X-username: <your-name> 
-    X-orgname: org1
-```
-
-16. 하기의 **Execute** 를 클릭하여 수행합니다. Response에서 code가 200 이고 Details가 다음과 같으면 정상입니다.
-
-```
-{
-  "transactionId": "a6b324c177ae2fef78b74ddbf243395574c09909331ac2e2df5e4646af8b0e64"
-}
-```
-
-17. 이제 다음과 같은 구성이 완성되었습니다.
-
-![client](/lab5/images/rest_8.png)
 
 
 ---

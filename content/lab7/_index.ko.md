@@ -1,16 +1,21 @@
 ---
-title: RESTful API서버 구성
-weight: 80
-pre: "<b>모듈 4. </b>"
+title: Supply Chain 작동 확인
+weight: 120
+pre: "<b>모듈 6. </b>"
 chapter: true
 ---
 
-# RESTful API서버 구성 
+# Supply Chain 작동 확인
 
-- RESTful API서버는 Hyperledger Fabric Client SDK를 사용하여Chaincode와 상호 작용하고 Chaincode 기능을 RESTful API로 노출하는 Node.js 애플리케이션입니다. 
-- RESTful API 서버는 Frontend의 UI 응용 프로그램과Fabric 네트워크 사이의 gateway 역할을 함으로써 상호 의존을 낮추고 느슨한 결합을 가능하게 합니다. 
+- 이제 모든 작업이 완료되었습니다. Web UI를 통해 supply chain이 정상적으로 작동을 하고, 주문에 대한 결과를 정상적으로 전달해주는지 확인합니다. 
+- 요청은 앞의 PART 2의 (STEP 4. Chaincode 배포)에서 설명 했듯이 다음과 같은 순서로 진행됩니다. 
 
-- 본 Lab에서는 편의상 PART 2에서 구성한 Fabric Client 에 RESTful API서버를 함께 구성하도록 하겠습니다.
+![chain](/lab7/images/chain_1.png)
+
+- 요청의 순서가 뒤바뀌거나 API 요청시 HTTP 헤더에 들어가는 username이 다르다면 Chaincode와 Application에 정의된 대로 **Failed to invoke chaincode.** 에러가 발생합니다. 
+
+
+
 
 
 ---
