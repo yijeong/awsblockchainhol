@@ -1,7 +1,7 @@
 ---
-title: IoT 보안 터널링
+title: 블록체인 네트워크 및 멤버 생성 
 weight: 1
-pre: "<b>3.1 </b>"
+pre: "<b>2.1 </b>"
 ---
 
 ## AWS IoT 보안 터널링 

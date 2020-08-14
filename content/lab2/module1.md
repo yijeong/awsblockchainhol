@@ -1,79 +1,45 @@
 ---
-title: IoT device 기본 구성 (콘솔)
+title: 실습 개요   
 weight: 1
-pre: "<b>2.1 </b>"
+pre: "<b>0.1 </b>"
 ---
 
 
-- AWS IoT에 연결된 디바이스는 AWS IoT 레지스트리 내에 사물(thing)로 표현됩니다. 사물은 특정 디바이스 또는 논리적 엔터티를 나타냅니다. 사물은 물리적 디바이스 또는 센서일 수 있습니다(예: 전구 또는 벽면 스위치). 또한 사물은 애플리케이션의 인스턴스와 같은 논리적 엔터티(**워크샵에서는 GGAD 인스턴스**) 또는 직접 AWS IoT에 연결하지는 않지만 여기에 연결하는 다른 디바이스와 관련이 있는 물리적 엔터티(예: 엔진 센서 또는 제어 패널이 장착된 차량)일 수도 있습니다.
+## 유의사항
+본 Lab은 기본적으로 **미국 버지니아 북부(us-east-1)**을 사용합니다. 우측 상단의 리전 정보가 버지니아 북부 리전이 맞는지 반드시 확인 후 시작해 주시길 바랍니다. 콘솔은 영문 기준으로 작성되어 있습니다.
 
-1. 우선 AWS IoT [콘솔](https://console.aws.amazon.com/iot/home?region=us-east-1)로 이동합니다. 
+## 사전 준비 사항 
 
-2. AWS IoT 콘솔의 **온보딩** 메뉴로 이동합니다. 
-![iotconsole](/lab2/image/iotconsole_1.png)
+본 Lab에서 우리는 github에 저장된 소스를 가져와 수정하고 사용할 예정입니다. 개발을 위해 로컬 환경을 사용할 수도 있지만 필요한 권한 설정 작업을 줄이기 위해 AWS Cloud9을 사용하겠습니다. AWS Cloud9은 브라우저만으로 코드를 작성, 실행 및 디버깅할 수 있는 클라우드 기반 IDE(통합 개발 환경)입니다. PART 2, PART 3 에서 이 Cloud9을 통해 Fabric Client 및 API 서버를 구성할 예정입니다. 
 
-- 온보딩은 AWS IoT 디바이스 SDK용 연결 마법사를 사용하여 디바이스 또는 컴퓨터를 AWS IoT에 연결할 수 있는 방법입니다. 
+1. AWS Management Console에서AWS Cloud9 서비스로 [이동](https://us-east-1.console.aws.amazon.com/cloud9/home/product)합니다.
 
+2. [Create environment] 를 클릭합니다. 
 
-3. 디바이스 온보딩을 클릭합니다. 
-![iotconsole](/lab2/image/iotconsole_2.png)
+3. Environment name and description 에서 Name을 “beer-IDE”로 지정하고 [Next Step] 을 클릭합니다. 
 
-4. 다음 화면에서 시작하기를 클릭하여 진행합니다.
-![iotconsole](/lab2/image/iotconsole_3.png)
+![pre](/lab1/image/pre_1.png)
 
-5. 현재 이 워크샵에서는 ubuntu 18.04 TLS 기반의 EC2 인스턴스를 GGAD용으로 사용합니다. 따라서 플랫폼은 **Linux/OSX**를 선택하고, SDK언어는 **Python**을 선택합니다. 
-![iotconsole](/lab2/image/iotconsole_4.png)
+4. **Configure settings**의 **Instance type**을 **Other instance type – t2.medium**으로 변경하고 [Next Step]을 클릭합니다. 
 
-6. 사물 이름은 "*SFworkshop_thing*"으로 지정하고 다음 단계를 클릭하여 진행합니다. 
-![iotconsole](/lab2/image/iotconsole_5.png)
+![pre](/lab1/image/pre_2.png)
 
-{{% notice warning %}}
-사물의 이름이 달라지면 추후 코드 동작에 문제가 있을 수 있습니다. 
-{{% /notice %}}
+5. Review 후 [Create environment] 를 클릭합니다. 환경 생성 완료는 2 ~ 3분 정도 소요됩니다. 
 
-7. 과정이 완료되면 레지스트리에 사물과 그에 연결된 정책이 생성될 예정입니다. 사물 디바이스에 관련 설정을 하기 위한 연결 키트를 다운로드하고 잘 완료가되었는지 확인합니다. 
-![iotconsole](/lab2/image/iotconsole_6.png)
-![iotconsole](/lab2/image/iotconsole_7.png)
+6. 생성이 완료되면 Welcome 창을 종료하고 Terminal창의 크기를 늘려줍니다. 
 
-8. 이 단계는 모듈 2.2에서 수행할 예정이므로 우선 완료를 클릭하여 구성을 완료합니다. 
-![iotconsole](/lab2/image/iotconsole_8.png)
-![iotconsole](/lab2/image/iotconsole_9.png)
+![pre](/lab1/image/pre_3.png)
 
-9. 다음과 같이 AWS IoT 콘솔 > 관리 > 사물에서 "**SFworkshop_thing**"이 등록된 것을 확인하실 수 있습니다. 
-![iotconsole](/lab2/image/iotconsole_10.png)
-
-10. 원활한 워크샵 진행을 위해 사물의 정책을 수정하겠습니다. "**SFworkshop_thing**"을 클릭하여 **보안** 메뉴로 이동하여 앞서 자동으로 생성되었던 인증서를 선택합니다. 
-![iotconsole](/lab2/image/iotconsole_11.png)
-
-11. 메뉴 탭에서 **정책** 를 클릭하고 마찬가지로 앞서 자동으로 생성되었던 정책을 선택합니다.  
-![iotconsole](/lab2/image/iotconsole_12.png)
-
-12. 정책 문서 편집을 클릭합니다. 
-![iotconsole](/lab2/image/iotconsole_13.png)
-
-13. 기존의 정책을 삭제하고 다음과 같이 수정하고 "**새 버전으로 저장하기**"를 클릭하여 저장합니다. 
+7. Terminal에서 다음을 입력합니다. 
 ```
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iot:*"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
+cd ~
+git clone https://github.com/awslego/blockchain-supplychain.git
 ```
-
-14. 최종적인 모습은 다음과 같습니다. 
-![iotconsole](/lab2/image/iotconsole_14.png)
-
-{{% notice warning %}}
-실제 운영환경에서는 최소권한 원칙을 준수하여 필요한 권한만을 부여하는 정책을 적용하는 것이 좋습니다. 
+{{% notice info %}}
+해당 git repository에는 본 Lab에서 사용할 Fabric client구성 용 CloudFormation stack / Chain Code / Restful API / Web UI code가 포함되어있습니다. 
 {{% /notice %}}
 
 
----
-© 2020 Amazon Web Services, Inc. 또는 자회사, All rights reserved.
+
+
+

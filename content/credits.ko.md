@@ -10,10 +10,15 @@ yijeong@amazon.com
 
 ## Blockchian Pub Members
 Amazon Web Services Solutions Architect 박혜영
+
 Amazon Web Services Solutions Architect 박천구
+
 Amazon Web Services Solutions Architect 박준
+
 Amazon Web Services Solutions Architect 김성진
+
 Amazon Web Services Solutions Architect 김학민
+
 Amazon Web Services Solutions Architect 조이정 
 
 Check out our Demo presentation on AWS Summit Seoul 2019 Facebook Clip!! 

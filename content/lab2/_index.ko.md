@@ -1,11 +1,11 @@
 ---
-title: IoT Device 구성 
+title: 사전 준비 사항
 weight: 30
-pre: "<b>모듈 2. </b>"
+pre: "<b>모듈 1. </b>"
 chapter: true
 ---
 
-# IoT Device 구성
+# 사전 준비 사항
 
-- 모듈 2에서는 모듈 1에서 만든 GGAD 인스턴스가 AWS IoT 서비스에서 **thing 디바이스**로써 동작할 수 있도록 AWS console 작업과 인스턴스 내 설정을 진행합니다. 
+- 모듈 1에서는 개발을 위한 cloud9 환경을 구성합니다.
 

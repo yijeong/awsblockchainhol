@@ -20,7 +20,7 @@ defaultContentLanguageInSubdir= true
 home = [ "HTML", "RSS", "JSON"]
 
 [Languages.ko]
-title = "AWS IoT 서비스 워크샵"
+title = "AWS Managed Blockchain 워크샵"
 weight = 1
 languageName = "한국어"
 
