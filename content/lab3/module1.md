@@ -4,27 +4,44 @@ weight: 1
 pre: "<b>2.1 </b>"
 ---
 
-## AWS IoT 보안 터널링 
-원격 사이트의 제한된 방화벽 뒤에 디바이스를 배포하는 경우 문제에 대한 트러블슈팅, 구성 업데이트 및 기타 운영 작업을 위해 해당 디바이스에 액세스할 수 있는 방법으로, AWS IoT에서 관리하는 보안 연결을 통해 원격 디바이스에 양방향 통신을 설정할 수 있습니다. 기존 인바운드 방화벽 규칙을 업데이트할 필요가 없으므로 원격 사이트의 방화벽 규칙에서 제공하는 보안 수준을 동일하게 유지할 수 있습니다. 
+1. AWS Management Console에서 Amazon Managed Blockchain 서비스로 [이동](https://console.aws.amazon.com/managedblockchain/home?region=us-east-1#firstRun)합니다.
 
-![securetunnel](/lab2/image/securetunnel_1.png)
+2. [Create a network] 를 클릭합니다.
+
+![amb](/lab3/image/amb_1.png)
+
+3. **Create blockchain network**에서 블록체인 네트워크를 생성합니다. Blockchain Framework에서 **Hyperledger Fabric 1.2** 을 선택하고 **network edition 은 **default** 로 둡니다.
 
 {{% notice info %}}
-워크샵에서는 소스 및 대상지가 모두 VPC (SFworkshop VPC, default VPC)로 시뮬레이션 되었다는 것을 기억하십시오. 워크샵 특성상 모두 AWS상에서 구성이 되지만 실제로는 동일하게 on-premise와 PC상에서 보안 터널을 구성할 수 있습니다.
+네트워크 에디션은 네트워크의 속성을 결정합니다. 여기에는 member수, member 당 node 수 등이 포함됩니다.
 {{% /notice %}}
 
-Key Msg : 
-**AWS IoT 서비스에서 발급받은 token + source 의 local proxy + destination 의 local proxy**
-이 3가지의 조합으로 다른 프라이빗 네트워크 대역 간 remote 통신이 가능하고, 이에 따른 방화벽 오픈이 불필요하며 암호화 통신 등의 보안상 장점을 누릴 수 있습니다. 
+![amb](/lab3/image/amb_2.png)
 
-### 보안 터널링 구성 요소 
-- **Destination** : 디바이스 액세스하려는 원격 디바이스
-- **Destination Application** : 대상 디바이스에서 실행되는 애플리케이션 Ex) SSH demon 
-- **Source** :  디바이스운영자가 대상 디바이스(일반적으로 랩톱 또는 데스크톱 컴퓨터)에 대한 세션을 시작하는 데 사용하는 디바이스
-- **Tunnel** :  소스 디바이스와 대상 디바이스 간의 양방향 통신을 가능하게 하는 AWS IoT를 통한 논리적 경로
-- **CAT**(클라이언트 액세스 토큰) :  새 터널이 생성될 때 보안 터널링에 의해 생성된 토큰 페어. CAT는 소스 및 대상 디바이스에서 보안 터널링 서비스에 연결하는 데 사용.
-- **IoT device agent** : AWS IoT 디바이스 게이트웨이에 연결하고 MQTT를 통해 새 터널 알림을 수신하는 IoT 애플리케이션.
-- **Local proxy** : 소스 및 대상 디바이스에서 실행되고 보안 터널링 서비스와 디바이스 애플리케이션 간에 데이터 스트림을 릴레이하는 소프트웨어 프록시입니다. 로컬 프록시는 소스 모드 또는 대상 모드에서 실행할 수 있습니다. 
+4. Network name and description 에서Network name 을 **“beer”** 으로 지정합니다. 
+
+5. Voting policy는 그대로 두고 [Next]를 클릭합니다. 마지막 PART 6에서 member 를 추가하는 실습을 진행하며 설명을 하도록 하겠습니다. 
+
+![amb](/lab3/image/amb_3.png)
+
+6. Create Member 에서 블록체인 네트워크에 참가할 first member를 생성합니다. Member Configuration에서 Member name에 **“org1”**이라고 지정하고 Description에 적절한 설명을 넣어줍니다.
+
+{{% notice info %}}
+member (혹은 organization이라고도 합니다.)는 네트워크 내에서 고유한 정체성을 가지고 있으며 네트워크 당 최소 한 명의 member가 필요하므로 첫 번째 member를 설정한 뒤에 피어 노드를 추가할 수 있습니다. 
+{{% /notice %}}
+
+7. Hyperledger Fabric certificate authority (CA) configuration 에서 다음과 같이 지정합니다. 
+	- Admin name: “admin1”
+  	- Admin Password: “Passwd123”
+
+8. [Next]를 선택합니다. 
+
+9. Review 후, [Create network and member]를 선택합니다. 
+
+10. Creating 에서 Available 상태까지는 약 15 ~ 20 분이 소요됩니다. 
+
+![amb](/lab3/image/amb_4.png)
+
 
 
  

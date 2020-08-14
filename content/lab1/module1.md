@@ -14,9 +14,9 @@ pre: "<b>0.1 </b>"
 
 본 Lab에서는 다음과 같은 AWS 서비스가 사용됩니다. 
 
-**Amazon Managed Blockchain** https://aws.amazon.com/managed-blockchain/
-**Amazon S3** https://aws.amazon.com/s3/
-**Amazon EC2** https://aws.amazon.com/ec2/
+- **Amazon Managed Blockchain** https://aws.amazon.com/managed-blockchain/
+- **Amazon S3** https://aws.amazon.com/s3/
+- **Amazon EC2** https://aws.amazon.com/ec2/
 
 
 

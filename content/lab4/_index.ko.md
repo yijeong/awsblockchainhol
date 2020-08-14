@@ -1,15 +1,12 @@
 ---
-title: 자원 삭제
+title: Fabric Client설치 및 구성 
 weight: 60
-pre: "<b>모듈 4. </b>"
+pre: "<b>모듈 3. </b>"
 ---
 
-# 자원 삭제
+# Fabric Client설치 및 구성 
 
-- AWS의 자원들은 대부분 pay-as-you-go 정책을 가지고 있습니다.
-- 따라서 사용하지 않는 자원을 방치하면 불필요한 비용이 발생할 수 있습니다. 
-- 워크샵을 마무리 지으며, 사용했던 자원을 삭제합니다. 
-
+Fabric Client는 chaincode를 deploy 하고 blockchain 네트워크를 관리하는 역할을 합니다. 환경 구성은 **모듈 1. 사전 준비 사항**에서 설정한 AWS Cloud9을 통해 Cloudformation 스택을 deploy하여 진행할 예정입니다. 
 
 
 ---
