@@ -5,11 +5,11 @@ weight: 20
 chapter: true
 ---
 
-# AWS IoT Secure Tunneling 구성
+# Amazon Managed Blockchain을 이용한 Beer Supply Chain 만들기
 
 ---
 
-AWS IoT Secure Tunneling (보안 터널링)을 구성해봅니다. 
+mazon Managed Blockchain을 이용한 Beer Supply Chain 을 구성해봅니다. 
 
 ---
 © 2020 Amazon Web Services, Inc. 또는 자회사, All rights reserved.

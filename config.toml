@@ -1,8 +1,8 @@
-baseURL = "https://master.d29ziitejes9d9.amplifyapp.com/"
+baseURL = "https://master.d261j912nag1qf.amplifyapp.com/"
 languageCode = "ko-KR"
 defaultContentLanguage = "ko"
 
-title = "AWS IoT 서비스 워크샵"
+title = "AWS Managed Blockchain 워크샵"
 theme = "hugo-theme-learn"
 themesdir = "."
 metaDataFormat = "yaml"
