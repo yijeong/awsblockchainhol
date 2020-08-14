@@ -27,6 +27,7 @@ docker exec cli configtxgen -outputCreateChannelTx /opt/home/$CHANNEL.pb -profil
 ```
 
 - (결과 example)
+- 
 2019-05-20 07:24:23.285 UTC [common/tools/configtxgen] main -> INFO 001 Loading configuration
 2019-05-20 07:24:23.290 UTC [common/tools/configtxgen] doOutputChannelCreateTx -> INFO 002 Generating new channel configtx
 2019-05-20 07:24:23.290 UTC [common/tools/configtxgen/encoder] NewApplicationGroup -> WARN 003 Default policy emission is deprecated, please include policy specificiations for the application group in configtx.yaml
@@ -43,6 +44,7 @@ docker exec -e "CORE_PEER_TLS_ENABLED=true" \
 ```
 
 - (결과 example)
+- 
 2019-05-20 07:26:04.258 UTC [channelCmd] InitCmdFactory -> INFO 001 Endorser and orderer connections initialized
 2019-05-20 07:26:04.342 UTC [cli/common] readBlock -> INFO 002 Got status: &{NOT_FOUND}
 2019-05-20 07:26:04.352 UTC [channelCmd] InitCmdFactory -> INFO 003 Endorser and orderer connections initialized
@@ -58,6 +60,7 @@ docker exec -e "CORE_PEER_TLS_ENABLED=true" \
 ```
 
 - (결과 example)
+- 
 2019-05-20 07:29:55.821 UTC [channelCmd] InitCmdFactory -> INFO 001 Endorser and orderer connections initialized
 2019-05-20 07:29:56.140 UTC [channelCmd] executeJoin -> INFO 002 Successfully submitted proposal to join channel
 
@@ -74,7 +77,7 @@ ls -lt /home/ec2-user/fabric-samples/chaincode/hyperledger/fabric/peer
 
 4. 이제 다음과 같은 구성이 완성되었습니다. 
 
-![client](/lab4/image/client_4.png)
+![client](/lab4/images/client_4.png)
 
 
 
