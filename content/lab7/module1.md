@@ -8,9 +8,9 @@ pre: "<b>6.1 </b>"
 최초 주문은 냉장고에 장착된 사물 인식 장비와 AWS IoT, Lambda와 같은 서비스를 통해 자동으로 발생되므로 그 작업을 시뮬레이션 해주어야 합니다. 
 
 
-1. AWS Cloud9의 터미널로 이동합니다. (**“beer-IDE”**)
+1. **AWS Cloud9**의 터미널로 이동합니다. (**“beer-IDE”**)
 
-2. 주문을 발생 시키기 위해 initLedger및 startTransfer 를 합니다. 이 요청을 통해 Fabric 네트워크 원장에 새롭게 맥주 10명을 주문하는 트랜잭션이 생성됩니다. 
+2. 주문을 발생 시키기 위해 **initLedger**및 **startTransfer** 를 합니다. 이 요청을 통해 Fabric 네트워크 원장에 새롭게 맥주 10명을 주문하는 트랜잭션이 생성됩니다. 
 ```
 # initLedger – Ledger 초기화
 curl -X POST "http://<ELBDNS>/transfer/init" -H "accept: */*" -H "X-username: <your-name>" -H "X-orgName: org1"
@@ -29,7 +29,7 @@ curl -X POST "http://<ELBDNS>/transfer/start" -H "accept: */*" -H "X-username: <
 {"transactionId":"f95d02584a080f505daa17572251cf4f6ba73782a6c4a175e02b399ab65c7e8a"} 
 ```
 
-4. Web UI중에서 Manufacturer APP이 active된 것을 확인합니다. 
+4. Web UI중에서 **Manufacturer APP**이 active된 것을 확인합니다. 
 
 ![chain](/lab7/images/chain_2.png)
 

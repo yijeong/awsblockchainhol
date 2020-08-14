@@ -27,7 +27,7 @@ pre: "<b>0.2 </b>"
 
 {{% notice warning %}}
 본 Lab은 AWS Seoul summit 2019에서 시연한 Blockchain Pub을 바탕으로 만들어졌습니다. 
-시연에서는 냉장고(Device) 안에서 맥주의 수량을 체크하고 자동으로 주문을 발생시키는 AWS DeepLens, IoT Core, Lambda 를 활용했지만 AWS DeepLens 나 냉장고와 같은 실물이 없는 경우 구현이 어려울 수 있습니다. 따라서 본 Lab에서는 위의 3가지 기능 구현 중 2번은 명시적인 API 요청으로 대체하겠습니다. 2번 구현이 궁금하신 분들은 55페이지의 Appendix를 참고해주시기 바랍니다. 
+시연에서는 냉장고(Device) 안에서 맥주의 수량을 체크하고 자동으로 주문을 발생시키는 AWS DeepLens, IoT Core, Lambda 를 활용했지만 AWS DeepLens 나 냉장고와 같은 실물이 없는 경우 구현이 어려울 수 있습니다. 따라서 본 Lab에서는 위의 3가지 기능 구현 중 2번은 명시적인 API 요청으로 대체하겠습니다. 
 {{% /notice %}}
  
 AWS Seoul summit 2019에서 선보인 시연이 궁금하신 분들은 하기 링크를 참고해주시기 바랍니다. 

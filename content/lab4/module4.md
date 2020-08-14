@@ -49,7 +49,7 @@ docker inspect cli
 /home/ec2-user/fabric-samples/chaincode 이 위치에 chaincode를 복사하면 cli 컨테이너에서 접근할 수 있게 됩니다. 
 {{% /notice %}}
 
-2. 이 폴더에 beersupplychain 폴더를 만들고 git에서 clone해온 chaincode를 복사합니다. 
+2. 이 폴더에 **beersupplychain** 폴더를 만들고 git에서 clone해온 chaincode를 복사합니다. 
 ```
 cd ~
 mkdir -p ./fabric-samples/chaincode/beersupplychain
