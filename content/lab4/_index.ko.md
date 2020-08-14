@@ -2,6 +2,7 @@
 title: Fabric Client설치 및 구성 
 weight: 60
 pre: "<b>모듈 3. </b>"
+chapter: true
 ---
 
 # Fabric Client설치 및 구성 

@@ -1,6 +1,6 @@
 ---
 title: Fabric Client 구성 
-weight: 1
+weight: 2
 pre: "<b>3.2 </b>"
 ---
 

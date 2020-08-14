@@ -9,7 +9,7 @@ chapter: true
 
 ---
 
-mazon Managed Blockchain을 이용한 Beer Supply Chain 을 구성해봅니다. 
+Amazon Managed Blockchain을 이용한 Beer Supply Chain 을 구성해봅니다. 
 
 ---
 © 2020 Amazon Web Services, Inc. 또는 자회사, All rights reserved.
