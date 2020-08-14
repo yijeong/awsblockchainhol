@@ -44,16 +44,17 @@ Keypair beer-keypair already exists. 라는 결과가 나오면 EC2 콘솔 > Key
 {{% /notice %}}
 
 6. Stack 생성이 완료되는 데는 약 5-6분이 소요됩니다. 기다리는 동안 무슨 작업을 하는지 살펴보겠습니다. CloudFormation은 Fabric Client 환경을 구성하며, 다음과 같은 자원들이 생성됩니다. 
--	VPC
--	VPC Endpoint 
--	IAM Role
--	Security Group
--	EC2 (Fabric client) : Fabric CLI, docker, go 등이 설치되어있는 AMI로 생성 / Hyperledger에서 제공하는 fabric-samples 가 포함되어 테스트 가능 
--	ELB 
 
-6. 이제 다음과 같은 구성이 완성되었습니다. 
+- VPC
+- VPC Endpoint 
+- IAM Role
+- Security Group
+- EC2 (Fabric client) : Fabric CLI, docker, go 등이 설치되어있는 AMI로 생성 / Hyperledger에서 제공하는 fabric-samples 가 포함되어 테스트 가능 
+- ELB 
 
-![client](/lab4/image/client_1.png)
+7. 이제 다음과 같은 구성이 완성되었습니다. 
+
+![client](/lab4/images/client_1.png)
 
 7. AWS Management Console에서 CloudFormation 서비스로 [이동](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active)합니다.
  
@@ -61,7 +62,7 @@ Keypair beer-keypair already exists. 라는 결과가 나오면 EC2 콘솔 > Key
 
 9. **Outputs** 탭에서 어떤 자원들이 생성되었는지 확인합니다.  
 
-![client](/lab4/image/client_2.png)
+![client](/lab4/images/client_2.png)
 
 
 
