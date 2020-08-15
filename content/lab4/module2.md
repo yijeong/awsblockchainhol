@@ -16,7 +16,7 @@ ssh ec2-user@<your EC2 Endpoint> -i ~/beer-keypair.pem
 
 3. Fabric Client에서 소스를 내려 받습니다.
 ```
-git clone https://github.com/awslego/blockchain-supplychain.git
+git clone https://github.com/yijeong/awsblockchainsupplychain.git
 ```
 
 4. Fabric Network에 필요한 환경 변수 값을 수정하고 반영합니다. 
