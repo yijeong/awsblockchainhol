@@ -33,7 +33,7 @@ pre: "<b>0.1 </b>"
 7. Terminal에서 다음을 입력합니다. 
 ```
 cd ~
-git clone https://github.com/yijeong/awsblockchainsupplychain.git
+git clone https://github.com/yijeong/blockchain-supplychain.git
 ```
 {{% notice info %}}
 해당 git repository에는 본 Lab에서 사용할 Fabric client구성 용 CloudFormation stack / Chain Code / Restful API / Web UI code가 포함되어있습니다. 
