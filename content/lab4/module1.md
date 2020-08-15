@@ -6,7 +6,7 @@ pre: "<b>3.1 </b>"
 
 1. 모듈 1. 사전 준비 사항에서 설정한 **AWS Cloud9**의 터미널로 이동합니다. 
 
-2. Terminal에서 다음과 같이 환경 변수 파일을 편집합니다. **NETWORKID**엔 Amazon Managed Blockchain 콘솔의 Networks에서 확인할 수 있는 **“beer”** 의 network ID를 입력합니다. 
+2. Terminal에서 다음과 같이 환경 변수 파일을 편집합니다. **NETWORKID**엔 Amazon Managed Blockchain 콘솔의 Networks에서 확인할 수 있는 **“beer”** 의 network ID를 입력합니다. (예: n-CTDY4PVBNVHUTO2CQMYPDMVKVI)
 ```
 cd ~/blockchain-supplychain
 vi cloud9_env_setting.sh

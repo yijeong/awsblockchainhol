@@ -20,7 +20,7 @@ pre: "<b>2.1 </b>"
 
 4. **Network name and description** 에서 **Network name** 을 **“beer”** 으로 지정합니다. 
 
-5. **Voting policy**는 그대로 두고 **[Next]**를 클릭합니다. 마지막 PART 6에서 member 를 추가하는 실습을 진행하며 설명을 하도록 하겠습니다. 
+5. **Voting policy**는 그대로 두고 **[Next]**를 클릭합니다. 마지막 **모듈 7** 에서 member 를 추가하는 실습을 진행하며 설명을 하도록 하겠습니다. 
 
 ![amb](/lab3/image/amb_3.png)
 

@@ -19,10 +19,11 @@ vi configtx.yaml
   15      ID: <Insert your MEMBER_ID>
 ```
 
-2. Channel을 구성하기 위해 실행 파일을 수행합니다. 
+2. Channel을 구성하고 peer node를 참여시키기 위해 다음 실행 파일을 차례대로 수행합니다. 
 
 ```
 # configtx peer block 생성
+
 docker exec cli configtxgen -outputCreateChannelTx /opt/home/$CHANNEL.pb -profile OneOrgChannel -channelID $CHANNEL --configPath /opt/home/ 
 ```
 
@@ -36,6 +37,7 @@ docker exec cli configtxgen -outputCreateChannelTx /opt/home/$CHANNEL.pb -profil
 
 ```
 # Channel생성
+
 docker exec -e "CORE_PEER_TLS_ENABLED=true" \
  -e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/home/managedblockchain-tls-chain.pem" \
  -e "CORE_PEER_ADDRESS=$PEER" -e "CORE_PEER_LOCALMSPID=$MSP" \
@@ -53,6 +55,7 @@ docker exec -e "CORE_PEER_TLS_ENABLED=true" \
 
 ```
 # Channel에 peer node 참여 
+
 docker exec -e "CORE_PEER_TLS_ENABLED=true" \
  -e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/home/managedblockchain-tls-chain.pem" \
  -e "CORE_PEER_ADDRESS=$PEER" -e "CORE_PEER_LOCALMSPID=$MSP" \
@@ -63,8 +66,6 @@ docker exec -e "CORE_PEER_TLS_ENABLED=true" \
 - 
 2019-05-20 07:29:55.821 UTC [channelCmd] InitCmdFactory -> INFO 001 Endorser and orderer connections initialized
 2019-05-20 07:29:56.140 UTC [channelCmd] executeJoin -> INFO 002 Successfully submitted proposal to join channel
-
-
 
 3. 실행 결과 생성된 파일들을 확인합니다. 
 ```

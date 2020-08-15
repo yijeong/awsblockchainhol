@@ -8,7 +8,7 @@ pre: "<b>3.2 </b>"
 
 1. 다시 **AWS Cloud9**의 터미널로 이동합니다. (**“beer-IDE”**)
 
-2. 앞서 생성한 Fabric Client에 접속합니다. *<your EC2 Endpoint>*는 앞서 생성한 스택의 **Outputs**에서 **EC2URL**을 참고합니다. 
+2. 앞서 생성한 Fabric Client에 접속합니다. ***your EC2 Endpoint*** 는 앞서 생성한 스택의 **Outputs**에서 **EC2URL**을 참고합니다. 
 ```
 cd ~
 ssh ec2-user@<your EC2 Endpoint> -i ~/beer-keypair.pem
