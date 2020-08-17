@@ -12,36 +12,36 @@ pre: "<b>7.1 </b>"
 
 4. Create proposals에서 Propose invitation을 선택합니다. 
 
-![member](/lab8/images/memeber_1.png)
+![member](/lab8/images/member_1.png)
 
 5. Proposal configuration에서 제안 주체로 앞서 생성한 **“org1”**을 선택합니다. 
 
 6. 초대할 AWS account 번호를 입력하고 create 를 클릭합니다. 
 
-![member](/lab8/images/memeber_2.png)
+![member](/lab8/images/member_2.png)
 
 7.  Active 에서 방금 생성한 proposals을 확인할 수 있습니다. 
 
-![member](/lab8/images/memeber_3.png)
+![member](/lab8/images/member_3.png)
 
 8. 해당 proposal을 클릭합니다. 
 
 9. vote as member 로 **“org1”**를 선택하고, Yes 를 클릭합니다. 
 
-![member](/lab8/images/memeber_4.png)
+![member](/lab8/images/member_4.png)
 
-![member](/lab6/images/memeber_5.png)
+![member](/lab6/images/member_5.png)
 
 10.  초대를 받은 AWS Account의 **Amazon Managed Blockchain** 서비스로 이동합니다. 
 
 11. **Invitations** 에서 앞서 6번에서 생성한 **invitation** 내역을 확인합니다. 
 
-![member](/lab8/images/memeber_6.png)
-![member](/lab8/images/memeber_7.png)
+![member](/lab8/images/member_6.png)
+![member](/lab8/images/member_7.png)
 
 - 앞서 모듈 2에서 Fabric 네트워크를 구성할 때 **voting policy**를 default 값으로 설정한 것을 기억하실 겁니다. Default policy는 다음과 같습니다. 
 
-![member](/lab8/images/memeber_8.png)
+![member](/lab8/images/member_8.png)
 
 - Managed Blockchain 는 분산 네트워크이기 때문에 네트워크를 생성한 AWS 계정이나 다른 AWS 계정이 소유하지 않습니다. 
 - 따라서 네트워크에 참가하는 각 member들은 네트워크를 변경하기 위해 다른 모든 member들에게 투표(vote)를 의뢰합니다. 
@@ -52,7 +52,7 @@ pre: "<b>7.1 </b>"
 
 9. **invitations** 에서 해당 network 이름 (**“beer”**) 을 선택하고 **Accept invitation**을 클릭합니다. 
 
-![member](/lab8/images/memeber_9.png)
+![member](/lab8/images/member_9.png)
 
 10. **Create member and join network** 에서 Fabric 네트워크에 참여할 멤버를 구성하고 네트워크에 참여합니다. 
 
@@ -60,23 +60,23 @@ pre: "<b>7.1 </b>"
 - Admin username : admin1
 - Admin password : Passwd123
 
-![member](/lab8/images/memeber_10.png)
+![member](/lab8/images/member_10.png)
 
 11. **member** 생성이 완료 되는 것을 확인합니다. 
 
-![member](/lab8/images/memeber_11.png)
+![member](/lab8/images/member_11.png)
 
 12. 초대받은 AWS account의 Networks에 **“beer”**가 추가된 것을 확인합니다. 
 
-![member](/lab8/images/memeber_12.png)
+![member](/lab8/images/member_12.png)
 
 13. 초대받은 AWS account 와 초대한 AWS account 의 **Members**를 확인합니다. 
 
 - 초대한 AWS account의 Members
-![member](/lab8/images/memeber_13.png)
+![member](/lab8/images/member_13.png)
 
 - 초대받은 AWS account의 Members
-![member](/lab8/images/memeber_14.png)
+![member](/lab8/images/member_14.png)
 
 
 
