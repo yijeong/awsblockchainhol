@@ -11,6 +11,8 @@ Amazon Web Services Solutions Architect 박천구
 
 Amazon Web Services Solutions Architect 박준
 
+Amazon Web Services Solutions Architect 김준형
+
 Amazon Web Services Solutions Architect 김성진
 
 Amazon Web Services Solutions Architect 김학민
@@ -27,3 +29,4 @@ https://m.facebook.com/1563378127252216/posts/2282618825328139?sfns=mo
 ## 참고 자료 
 
 ## Git Repository
+https://github.com/yijeong/blockchain-supplychain
