@@ -50,7 +50,7 @@ ssh 세션을 재연결할 경우 다시 source 해주어야 합니다.
 
 5. 명령어 수행으로 마지막에 다음과 같은 값들이 출력됩니다. 다음 과정들을 위해 메모장에 기록해둡니다. 
 
-![client](/lab4/images/client_2.png)
+![client](/lab4/images/client_3.png)
 
 6. **fabric-export.sh** 실행으로 Peer node에 필요한 환경 변수를 위한 실행 파일도 생성이 되었습니다. 이 파일을 실행하여 적용합니다. 
 ```

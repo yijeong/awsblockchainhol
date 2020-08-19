@@ -30,9 +30,9 @@ pre: "<b>7.1 </b>"
 
 ![member](/lab8/images/member_4.png)
 
-![member](/lab6/images/member_5.png)
+![member](/lab8/images/member_5.png)
 
-10.  초대를 받은 AWS Account의 **Amazon Managed Blockchain** 서비스로 이동합니다. 
+10. 초대를 받은 AWS Account의 **Amazon Managed Blockchain** 서비스로 이동합니다. 
 
 11. **Invitations** 에서 앞서 6번에서 생성한 **invitation** 내역을 확인합니다. 
 
@@ -50,11 +50,11 @@ pre: "<b>7.1 </b>"
 - 다른 AWS 계정에 있는 member를 삭제하기 위해서도 비슷한 절차가 필요합니다. 
 - 다만 충분한 권한을 가진 AWS 계정의 보안주체는 제안서를 제출하지 않고 언제든지 해당 계정의 회원을 삭제할 수 있습니다. 
 
-9. **invitations** 에서 해당 network 이름 (**“beer”**) 을 선택하고 **Accept invitation**을 클릭합니다. 
+12. **invitations** 에서 해당 network 이름 (**“beer”**) 을 선택하고 **Accept invitation**을 클릭합니다. 
 
 ![member](/lab8/images/member_9.png)
 
-10. **Create member and join network** 에서 Fabric 네트워크에 참여할 멤버를 구성하고 네트워크에 참여합니다. 
+13. **Create member and join network** 에서 Fabric 네트워크에 참여할 멤버를 구성하고 네트워크에 참여합니다. 
 
 - Member name: org2
 - Admin username : admin1
@@ -62,15 +62,15 @@ pre: "<b>7.1 </b>"
 
 ![member](/lab8/images/member_10.png)
 
-11. **member** 생성이 완료 되는 것을 확인합니다. 
+14. **member** 생성이 완료 되는 것을 확인합니다. 
 
 ![member](/lab8/images/member_11.png)
 
-12. 초대받은 AWS account의 Networks에 **“beer”**가 추가된 것을 확인합니다. 
+15. 초대받은 AWS account의 Networks에 **“beer”**가 추가된 것을 확인합니다. 
 
 ![member](/lab8/images/member_12.png)
 
-13. 초대받은 AWS account 와 초대한 AWS account 의 **Members**를 확인합니다. 
+16. 초대받은 AWS account 와 초대한 AWS account 의 **Members**를 확인합니다. 
 
 - 초대한 AWS account의 Members
 ![member](/lab8/images/member_13.png)
